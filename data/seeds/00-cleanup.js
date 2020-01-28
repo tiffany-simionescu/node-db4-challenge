@@ -10,8 +10,8 @@
 // Jason Maurer claims this is easier:
 
 exports.seed = async (knex) => {
-  await knex("zoo_animals").truncate()
-  await knex("animals").truncate()
-  await knex("species").truncate()
-  await knex("zoos").truncate()
+  await knex("recipes-ingredients").truncate()
+  await knex("instructions").truncate()
+  await knex("ingredients").truncate()
+  await knex("recipes").truncate()
 }
