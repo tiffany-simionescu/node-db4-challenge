@@ -1,9 +1,8 @@
 const express = require('express');
 const helmet = require('helmet');
 
-const recipeRouter = require('');
-
-const db = require('./data/db-config');
+const recipeRouter = require('./routers/recipeRouter');
+const ingredientRouter = require('./routers/ingredientRouter');
 
 const server = express();
 
@@ -12,6 +11,7 @@ server.use(logger);
 server.use(express.json());
 
 server.use('/api/recipes', recipeRouter);
+server.use('/api/ingredients', ingredientRouter);
 
 server.get('/', (req, res) => {
   res.send(`<h2>Welcome to the Recipe's Database!</h2>`);
