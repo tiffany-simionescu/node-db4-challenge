@@ -26,7 +26,7 @@ exports.up = async function(knex) {
       .onUpdate("CASCADE")
   })
 
-  await knex.schema.createTable("recipes-ingredients", (table) => {
+  await knex.schema.createTable("recipes_ingredients", (table) => {
     table.integer("recipe_id")
       .notNullable()
       .references("id")
@@ -46,7 +46,7 @@ exports.up = async function(knex) {
 };
 
 exports.down = async function(knex) {
-  await knex.schema.dropTableIfExists("recipes-ingredients")
+  await knex.schema.dropTableIfExists("recipes_ingredients")
   await knex.schema.dropTableIfExists("instructions")
   await knex.schema.dropTableIfExists("ingredients")
   await knex.schema.dropTableIfExists("recipes")
